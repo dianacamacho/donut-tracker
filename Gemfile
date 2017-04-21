@@ -36,6 +36,7 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 gem 'figaro'
 gem 'materialize-sass', '~> 0.98.2'
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
+gem 'petergate', '~> 1.7', '>= 1.7.3'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
