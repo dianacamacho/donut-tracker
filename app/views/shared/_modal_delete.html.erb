@@ -1,0 +1,10 @@
+<div id="<%= modal_id %>" class="modal">
+  <div class="modal-content">
+    <h4><%= modal_header %></h4>
+    <p><%= modal_content %></p>
+  </div>
+  <div class="modal-footer">
+    <%= link_to button_text, registration_path(resource_name), method: :delete, class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+    <%= button_tag "Cancel", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+  </div>
+</div>
