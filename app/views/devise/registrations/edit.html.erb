@@ -1,0 +1,37 @@
+<div class="row">
+  <h3>Update My Account</h3>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "col s12" }) do |f| %>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.text_field :first_name, autofocus: true, class: "validate", placeholder: "First Name" %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.text_field :last_name, autofocus: true, class: "validate", placeholder: "Last Name" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.email_field :email, autofocus: true, class: "validate", placeholder: "Email Address" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <%= f.password_field :password, class: "valdate", placeholder: "Password" %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.password_field :password_confirmation, class: "valdate", placeholder: "Password Confirmation" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.email_field :current_password, class: "validate", placeholder: "Current Password" %>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn waves-effect waves-light" %>
+    </div>
+  <% end %>
+</div>
