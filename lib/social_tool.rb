@@ -7,6 +7,6 @@ module SocialTool
       config.access_token_secret = ENV.fetch("TWITTER_ACCESS_SECRET")
     end
 
-    client.user_timeline("doughnutvault")
+    client.user_timeline("doughnutvault").select { |tweet| tweet.created_at.today? }
   end
 end
