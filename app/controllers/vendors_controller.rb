@@ -4,7 +4,6 @@ class VendorsController < ApplicationController
 
   def index
     @vendors = Vendor.all
-    @tweets = SocialTool.new(twitter: "doughnutvault").today_tweets
   end
 
   def new

@@ -6,7 +6,12 @@
       <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
     </div>
     <div class="card-content">
-      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+      <% if vendor.sold_out? %>
+        <div class="tag center">
+            <i class="small material-icons">location_off</i>
+          <div class="tag-text">Sold Out</div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
