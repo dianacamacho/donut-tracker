@@ -15,4 +15,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize
+//= require materialize.clockpicker
 //= require_tree .

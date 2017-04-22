@@ -1,4 +1,4 @@
-<div class="col s12 m6">
+<div class="col s12 l6">
   <div class="card">
     <div class="card-image">
       <%= image_tag vendor.image.small %>
@@ -8,10 +8,18 @@
     <div class="card-content">
       <% if vendor.sold_out? %>
         <div class="tag center">
-            <i class="small material-icons">location_off</i>
+          <i class="small material-icons">location_off</i>
           <div class="tag-text">Sold Out</div>
         </div>
+      <% else %>
+        <div class="tag center">
+          <i class="small material-icons">location_on</i>
+          <div class="tag-text">Get your donuts starting at <%= vendor.opening_time.strftime("%l:%M %p") %>!</div>
+        </div>
       <% end %>
+        <ul class="collection">
+          <li class="collection-item">Today's Specials: </li>
+        </ul>
     </div>
   </div>
 </div>

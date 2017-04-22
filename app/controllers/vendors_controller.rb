@@ -42,6 +42,6 @@ class VendorsController < ApplicationController
     end
 
     def vendor_params
-      params.require(:vendor).permit(:name, :twitter, :hashtag, :image)
+      params.require(:vendor).permit(:name, :twitter, :hashtag, :time, :opening_time, :image)
     end
 end

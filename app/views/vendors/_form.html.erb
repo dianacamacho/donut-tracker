@@ -14,11 +14,21 @@
   </div>
   <div class="row">
     <div class="col s12">
-      <label class="btn waves-effect waves-light">
-        Image File 
-        <%= f.file_field :image, style: 'display: none' %>
-      </label>
+      <div class="file-field input-field">
+        <div class="btn">
+          <span>Image File</span>
+          <%= f.file_field :image %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="input-field col s12">
+      <label for="timepicker">Time</label>
+      <input id="timepicker" class="timepicker" type="time" name="vendor[opening_time]">
   </div>
 
   <div class="actions">
@@ -29,3 +39,9 @@
 <% end %>
 
 
+<script>
+  $('#timepicker').pickatime({
+     autoclose: false,
+     twelvehour: true
+   });
+</script>

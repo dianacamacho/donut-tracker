@@ -8,7 +8,12 @@ class Vendor < ApplicationRecord
   end
 
   def sold_out?
-    result = today_tweets.select {|tweet| tweet.downcase.include?(hashtag) && tweet.downcase.include?('sold out') }
+    result = today_tweets.select {|tweet| tweet.downcase.include?(hashtag) && tweet.downcase.include?('sold out') }.any?
     result ? true : false
+  end
+
+  def day_specials
+    result = today_tweets.select {|tweet| tweet.downcase.include?(hashtag) && tweet.downcase.include?('special') }.any?
+    result
   end
 end
