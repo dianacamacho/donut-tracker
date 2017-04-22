@@ -37,6 +37,9 @@ class DonutsController < ApplicationController
   end
 
   private
+    def set_donut
+      @donut = Donut.find(params[:id])
+    end
 
     def donut_params
       params.require(:donut).permit(:name, :user_id)

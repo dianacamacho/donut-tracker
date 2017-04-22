@@ -38,6 +38,9 @@ gem 'materialize-sass', '~> 0.98.2'
 gem 'material_icons', '~> 2.2', '>= 2.2.1'
 gem 'petergate', '~> 1.7', '>= 1.7.3'
 gem 'twitter', '~> 6.1'
+gem 'carrierwave', '~> 1.0'
+gem 'carrierwave-aws', '~> 1.1'
+gem 'mini_magick', '~> 4.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
