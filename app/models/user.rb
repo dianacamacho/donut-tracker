@@ -13,4 +13,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :donuts, dependent: :destroy
+  has_many :user_vendors, dependent: :destroy
+  has_many :vendors, through: :user_vendors
 end
