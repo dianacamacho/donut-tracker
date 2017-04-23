@@ -18,8 +18,23 @@
         </div>
       <% end %>
         <ul class="collection">
-          <li class="collection-item">Today's Specials: </li>
+          <li class="collection-item center teal lighten-2 white-text"><strong>Today's Specials</strong></li>
+          <% vendor.day_specials.each do |tw| %>
+            <li class="collection-item center"><%= tw %></li>
+          <% end %>
         </ul>
     </div>
   </div>
 </div>
+
+<!-- <p>tweeted today: <#%= vendor.location_tweeted_today? %></p>
+<p>opening time: <#%= vendor.opening_time %></p>
+<p>opening time: <#%= Time.zone.now %></p>
+
+<p>Day Specials for <#%= vendor.name %></p>
+<#% vendor.day_specials.each do |tw| %>
+  <p><#%= tw %></p>
+<#% end %>
+
+
+ -->

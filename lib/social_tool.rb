@@ -19,6 +19,7 @@ class SocialTool
   end
 
   def today_tweets
+    # returns array of tweet text strings
     timeline.select { |tweet| tweet.created_at.today? }.map(&:text)
   end
 end
