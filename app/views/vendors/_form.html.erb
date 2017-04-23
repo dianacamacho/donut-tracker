@@ -1,7 +1,14 @@
 <%= form_for(@vendor, html: { class: "col s12"}) do |f| %>
   <div class="row">
-    <div class="input-field col s12">
-      <%= f.text_field :name, autofocus: true, class: "validate", placeholder: "Name" %>
+    <div class="col s6">
+      <div class="input-field">
+        <%= f.text_field :name, autofocus: true, class: "validate", placeholder: "Name" %>
+      </div>
+    </div>
+    <div class="col s6">
+      <div class="input-field">
+        <input id="timepicker" class="timepicker" type="time" name="vendor[opening_time]" placeholder="Opening Time">
+      </div>
     </div>
   </div>
   <div class="row">
@@ -13,7 +20,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col s12">
+    <div class="col s6">
       <div class="file-field input-field">
         <div class="btn">
           <span>Image File</span>
@@ -25,23 +32,10 @@
       </div>
     </div>
   </div>
-
-  <div class="input-field col s12">
-      <label for="timepicker">Time</label>
-      <input id="timepicker" class="timepicker" type="time" name="vendor[opening_time]">
-  </div>
-
   <div class="actions">
     <button class="btn waves-effect waves-light" type="submit" name="action">Submit
       <i class="material-icons right">send</i>
     </button>
+    <%= link_to "Cancel", vendors_path, class: "btn waves-effect waves-light" %>
   </div>
 <% end %>
-
-
-<script>
-  $('#timepicker').pickatime({
-     autoclose: false,
-     twelvehour: true
-   });
-</script>
