@@ -12,21 +12,23 @@ class Vendor < ApplicationRecord
   end
 
   def sold_out?
-    result = today_tweets.select {|tweet| tweet.include?(hashtag) && tweet.downcase.include?('sold out')}.any?
-    result ? true : false
+    shop_tweets.select{ |tweet| tweet.downcase.include?('sold out')}.any?
   end
 
-  def location_tweeted_today?
-    result = today_tweets.select {|tweet| tweet.include?(hashtag)}.any?
-    result ? true : false
+  def shop_tweeted_today?
+    shop_tweets.any?
   end
 
-  def is_location_open?
+  def is_shop_open?
     opening_time <= Time.zone.now
   end
 
+  def shop_tweets
+    today_tweets.select {|tweet| tweet.include?(hashtag)}
+  end
+
   def day_specials
-    specials = today_tweets.select {|tweet| tweet.include?(hashtag) && (tweet.downcase.include?('special') || tweet.downcase.include?('specials') || tweet.downcase.include?('jelly')) }
+    specials = shop_tweets.select{ |tweet| tweet.downcase.include?('special') || tweet.downcase.include?('specials') || tweet.downcase.include?('jelly')}
     result = specials.any?
     result ? specials : ["Specials not available"]
   end
