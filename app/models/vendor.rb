@@ -3,8 +3,12 @@ class Vendor < ApplicationRecord
   has_many :user_vendors, dependent: :destroy
   has_many :users, through: :user_vendors
 
+  def timeline
+    call_twitter.timeline
+  end
+
   def today_tweets
-    SocialTool.new(twitter_handle: twitter).today_tweets
+    call_twitter.today_tweets
   end
 
   def sold_out?
@@ -15,5 +19,9 @@ class Vendor < ApplicationRecord
   def day_specials
     result = today_tweets.select {|tweet| tweet.downcase.include?(hashtag) && tweet.downcase.include?('special') }.any?
     result
+  end
+
+  def call_twitter
+    SocialTool.new(twitter_handle: twitter)
   end
 end
