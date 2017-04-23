@@ -37,4 +37,4 @@
   <% end %>
 </div>
 
-<%= render 'shared/modal_delete', modal_header: 'Confirm Account Deletion', modal_content: 'Are you sure you want to delete your account?', button_text: 'Confirm', modal_id: 'modal-user-delete' %>
+<%= render 'shared/modal', modal_header: 'Confirm Account Deletion', modal_content: 'Are you sure you want to delete your account?', button_text: 'Confirm', modal_id: 'modal-user-delete', path: registration_path(resource_name), http_verb: :delete %>

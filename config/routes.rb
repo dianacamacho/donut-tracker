@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root to: 'vendors#index'
   resources :donuts
   resources :vendors, except: [:show]
+  resources :user_vendors
   get 'hello_world', to: 'hello_world#index'
 end

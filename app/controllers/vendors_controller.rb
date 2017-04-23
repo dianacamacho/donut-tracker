@@ -4,6 +4,7 @@ class VendorsController < ApplicationController
 
   def index
     @vendors = Vendor.all
+    @user_vendor = UserVendor.new
   end
 
   def new
@@ -25,6 +26,7 @@ class VendorsController < ApplicationController
 
   def update
     if @vendor.update(vendor_params)
+      flash[:success] = "Vendor updated!"
       redirect_to vendors_path
     else
       render :edit

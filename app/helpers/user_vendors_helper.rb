@@ -1,0 +1,2 @@
+module UserVendorsHelper
+end

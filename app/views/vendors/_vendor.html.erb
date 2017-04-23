@@ -3,7 +3,7 @@
     <div class="card-image">
       <%= image_tag vendor.image.small %>
       <span class="card-title"><%= vendor.name %></span>
-      <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      <a class="btn-floating halfway-fab waves-effect waves-light red" href="#modal-vendor-subscribe"><i class="material-icons">add</i></a>
     </div>
     <div class="card-content">
       <% if vendor.sold_out? %>
@@ -26,6 +26,10 @@
     </div>
   </div>
 </div>
+
+
+<%= render 'subscribe_modal', vendor_id: vendor.id %>
+
 
 
 <!-- <p>tweeted today: <#%= vendor.location_tweeted_today? %></p>
