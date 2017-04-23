@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  
 
   def index
     @vendors = Vendor.all

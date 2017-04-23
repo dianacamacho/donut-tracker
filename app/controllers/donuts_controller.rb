@@ -1,6 +1,5 @@
 class DonutsController < ApplicationController
   before_action :set_donut, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
   access user: :all
   
   def index
