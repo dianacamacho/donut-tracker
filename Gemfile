@@ -41,6 +41,7 @@ gem 'twitter', '~> 6.1'
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
+gem 'twilio-ruby'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
