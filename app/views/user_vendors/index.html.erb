@@ -1,0 +1,7 @@
+<div class="row">
+  <h2>My Shops</h2>
+  <% @user_vendors.each do |user_vendor| %>
+    <%= render 'vendor', vendor: user_vendor.vendor, user_vendor_id: user_vendor.id %>
+  <% end %>
+</div>
+

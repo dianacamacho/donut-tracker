@@ -1,0 +1,10 @@
+<div id="modal-vendor-unsubscribe-<%= user_vendor_id %>" class="modal">
+  <div class="modal-content">
+    <h5>Unsubscribe from <%= vendor.name %></h5>
+    <p>Are you sure? You will stop receiving SMS updates for this shop.</p>
+  </div>
+  <div class="modal-footer">
+    <%= link_to "Remove Me", user_vendor_path(user_vendor_id), method: :delete, class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+    <%= button_tag "Cancel", type: "button", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+  </div>
+</div>

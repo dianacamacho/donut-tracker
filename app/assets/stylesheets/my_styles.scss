@@ -2,6 +2,10 @@
   margin-top: 30px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 .tag {
   background-color: #ddd;
   border: 1px solid #ddd;
@@ -13,4 +17,9 @@
 
 .vendor-specials {
   min-height: 120px;
+}
+
+.vendor-thumb-img {
+  max-height: 200px;
+  // width: 100%
 }

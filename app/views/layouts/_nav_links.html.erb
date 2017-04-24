@@ -1,6 +1,7 @@
 <li><%= link_to 'My Donuts', donuts_path if logged_in?(:user) %></li>
-<li><%= link_to 'Vendors', vendors_path %></li>
 <% if current_user %>
+  <li><%= link_to 'My Shops', my_shops_path %></li>
+  <li><%= link_to 'Vendors', vendors_path %></li>
   <li><%= link_to 'My Account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
 <% else %>

@@ -15,4 +15,8 @@ class User < ApplicationRecord
   has_many :donuts, dependent: :destroy
   has_many :user_vendors, dependent: :destroy
   has_many :vendors, through: :user_vendors
+
+  def user_subscribed?(vendor_id)
+    user_vendors.find_by(vendor_id: vendor_id)
+  end
 end

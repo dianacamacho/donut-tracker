@@ -1,12 +1,12 @@
-<div id="modal-vendor-subscribe-<%= vendor_id %>" class="modal">
+<div id="modal-vendor-subscribe-<%= vendor.id %>" class="modal">
   <%= form_for(@user_vendor) do |f| %>
-    <%= f.hidden_field :vendor_id, value: vendor_id %>
+    <%= f.hidden_field :vendor_id, value: vendor.id %>
     <div class="modal-content">
-      <h4>Subscribe</h4>
+      <h5>Subscribe to <%= vendor.name %></h5>
       <p>Get SMS updates about the special donuts of the day and be alerted when the shop sells out</p>
     </div>
     <div class="modal-footer">
-      <button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="action">"Sign Me Up"
+      <button class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="action">Sign Me Up
       </button>
       <%= button_tag "Cancel", type: "button", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
     </div>
