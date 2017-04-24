@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'user_vendors#index'
   
   resources :donuts
-  resources :vendors, except: [:show]
+  resources :vendors, except: [:show], path: 'shops'
   resources :user_vendors, only: [:create, :destroy]
 
   get '/my-shops', to: 'user_vendors#index', as: :my_shops

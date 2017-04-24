@@ -4,13 +4,14 @@
     <title>DonutTracker</title>
     <%= csrf_meta_tags %>
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+     <meta description="Track your favorite doughnut vault shops"/>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'layouts/nav' %>
-    <div class="container">
+    <div class="container mt-20">
       <% flash.each do |message_type, message| %>
           <%= javascript_tag "Materialize.toast('#{message}', 3000)" %>
       <% end %>

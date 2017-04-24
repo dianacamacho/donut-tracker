@@ -4,6 +4,9 @@ class UserVendorsController < ApplicationController
   def index
     @user_vendor = UserVendor.new
     @user_vendors = current_user.user_vendors
+    @vendors = Vendor.all
+    puts "*" * 100
+    p @images
   end
 
   def create
