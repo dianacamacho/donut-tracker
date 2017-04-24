@@ -1,6 +1,6 @@
 class VendorsController < ApplicationController
   before_action :set_vendor, only: [:edit, :update, :destroy]
-  
+  access user: { except: [:new, :create, :edit, :update, :destroy] }, admin: :all
 
   def index
     @vendors = Vendor.all

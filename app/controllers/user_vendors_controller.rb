@@ -1,6 +1,7 @@
 class UserVendorsController < ApplicationController
   before_action :set_user_vendor, only: [:destroy]
-
+  access user: :all
+  
   def index
     @user_vendor = UserVendor.new
     @user_vendors = current_user.user_vendors

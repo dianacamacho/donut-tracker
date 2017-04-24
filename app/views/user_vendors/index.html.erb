@@ -1,6 +1,6 @@
 <div class="row">
   <% if @user_vendors.any? %>
-    <h2>Shops I'm Tracking</h2>
+    <h2 class="center">Shops I'm Tracking</h2>
     <% @user_vendors.each do |user_vendor| %>
       <%= render 'vendor', vendor: user_vendor.vendor, user_vendor_id: user_vendor.id %>
     <% end %>
