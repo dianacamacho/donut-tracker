@@ -1,5 +1,5 @@
 namespace :vendor_notifications do
-  task :send_notification do
+  task send_notification: :environment do
     vendors = Vendor.all
     vendors.each do |vendor|
       if vendor.users.any?
