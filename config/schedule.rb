@@ -19,6 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 5.minutes do
-  rake 
+every 3.minutes do
+  rake "vendor_notifications:send_notification"
 end

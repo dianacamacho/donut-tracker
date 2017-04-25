@@ -1,12 +1,11 @@
 namespace :vendor_notifications do
-  desc "TODO"
-  task :specials_notification, [:phone, :message] => :environment do |_t, args|
-    TwilioNotification.new(phone: args[:phone], message: args[:message]).send_sms
-    puts "message sent"
-  end
-
-  desc "TODO"
-  task sold_out_notification: :environment do
-    puts "HELLO TESTING SOLD OUT"
+  task send_notification: :environment do
+    vendors = Vendor.all
+    vendors.each do |vendor|
+      vendor.users.each do |user|
+        TwilioNotification.new(phone: user.phone, message: vendor.name).send_sms
+        puts "message sent"
+      end
+    end
   end
 end
