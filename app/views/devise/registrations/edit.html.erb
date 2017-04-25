@@ -10,8 +10,11 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s6">
         <%= f.email_field :email, autofocus: true, class: "validate", placeholder: "Email Address" %>
+      </div>
+      <div class="input-field col s6">
+        <%= f.text_field :phone, autofocus: true, class: "validate", placeholder: "Phone Number (+15555555555)" %>
       </div>
     </div>
     <div class="row">

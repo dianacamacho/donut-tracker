@@ -42,7 +42,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws', '~> 1.1'
 gem 'mini_magick', '~> 4.7'
 gem 'twilio-ruby'
-
+gem 'whenever', :require => false
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
