@@ -66,4 +66,36 @@ class Vendor < ApplicationRecord
       false
     end
   end
+
+  def self.build_specials_sms
+    Vendor.all.each do |vendor|
+      if vendor.send_specials_message?
+        specials = vendor.day_specials.first
+        vendor.send_sms(specials)
+      end
+    end
+  end
+
+  def self.build_sold_out_sms
+    Vendor.all.each do |vendor|
+      if vendor.send_sold_out_message?
+        sold_out_message = "I hope you got your donuts, #{vendor.name} just sold out!"
+        vendor.send_sms(sold_out_message)
+      end
+    end
+  end
+
+  def user_phone_numbers
+    users.pluck(:phone)
+  end
+
+  def send_sms(message_body)
+    phone_numbers = self.user_phone_numbers
+    if phone_numbers.any?
+      phone_numbers.each do |phone_number|
+        TwilioNotification.new(phone: phone_number, message: message_body).send_sms
+        puts "#{message_body} sent"
+      end
+    end
+  end
 end
