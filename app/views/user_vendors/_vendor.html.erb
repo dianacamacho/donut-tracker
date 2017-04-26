@@ -17,12 +17,12 @@
           <div class="tag-text">Get your donuts starting at <%= vendor.opening_time.strftime("%l:%M %p") %>!</div>
         </div>
       <% end %>
-        <ul class="collection vendor-specials">
-          <li class="collection-item center teal lighten-2 white-text"><strong>Today's Specials</strong></li>
-          <% vendor.day_specials.each do |tw| %>
-            <li class="collection-item center"><%= tw %></li>
-          <% end %>
-        </ul>
+      <ul class="collection vendor-specials">
+        <li class="collection-item center teal lighten-2 white-text"><strong>Today's Specials</strong></li>
+        <% vendor.day_specials.each do |tw| %>
+          <li class="collection-item center"><%= tw %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

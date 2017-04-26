@@ -40,4 +40,20 @@ class Vendor < ApplicationRecord
   def call_twitter
     SocialTool.new(twitter_handle: twitter)
   end
+
+  def sold_out_message_sent?
+    if sold_out?
+      if !sold_out_at.blank? && sold_out_at.today?
+        true
+      else
+        update(sold_out_at: DateTime.now)
+        false
+      end
+    else
+      false
+    end
+  end
+
+  def specials_message_sent?
+  end
 end
