@@ -1,6 +1,6 @@
 <div class="row">
   <% if @user_vendors.any? %>
-    <h2 class="center">Shops I'm Tracking</h2>
+    <h2 class="center">Shops I'm Tracking <%= image_tag 'donuts_pusheen_small.gif' %></h2>
     <% @user_vendors.each do |user_vendor| %>
       <%= render 'vendor', vendor: user_vendor.vendor, user_vendor_id: user_vendor.id %>
     <% end %>
@@ -10,7 +10,10 @@
         <div class="card">
           <div class="card-content">
             <h4 class="center">Start tracking your favorite Doughnut Vault <%= link_to 'shops!', vendors_path %></h4>
-            <%= render 'shared/image_carousel' %>
+            <div class="center"><%= image_tag 'donut_jump.gif' %></div>
+            <div class="mt-neg-60">
+              <%= render 'shared/image_carousel' %>
+            </div>
           </div>
         </div>
       </div>
