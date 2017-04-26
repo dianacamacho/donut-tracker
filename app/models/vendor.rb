@@ -54,6 +54,16 @@ class Vendor < ApplicationRecord
     end
   end
 
-  def specials_message_sent?
+  def send_specials_message?
+    if !day_specials.include?("Specials not available")
+      if !specials_sent_at.blank? && specials_sent_at.today?
+        false
+      else
+        update(specials_sent_at: DateTime.now)
+        true
+      end
+    else
+      false
+    end
   end
 end
