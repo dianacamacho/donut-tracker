@@ -28,11 +28,7 @@ class Vendor < ApplicationRecord
   end
 
   def day_specials
-    specials = shop_tweets.select{ |tweet| 
-      tweet.downcase.include?('special') || 
-      tweet.downcase.include?('specials') || 
-      tweet.downcase.include?('jelly')
-    }
+    specials = shop_tweets.select{|tweet| !tweet.downcase.include?('sold out')}
     result = specials.any?
     result ? specials : ["Specials not available"]
   end
