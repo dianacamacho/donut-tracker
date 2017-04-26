@@ -7,7 +7,7 @@ namespace :vendor_notifications do
         if vendor.users.any?
           vendor.users.each do |user|
             TwilioNotification.new(phone: user.phone, message: specials).send_sms
-            puts "message sent"
+            puts "specials message sent"
           end
         end
       else
@@ -24,7 +24,7 @@ namespace :vendor_notifications do
         if vendor.users.any?
           vendor.users.each do |user|
             TwilioNotification.new(phone: user.phone, message: sold_out_message).send_sms
-            puts "message sent"
+            puts "sold out message sent"
           end
         end
       else 
